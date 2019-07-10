@@ -13,14 +13,21 @@
  * 
  * We will not be using code coverage for points.
  *
- * @author Rick Mercer and Your Name
+ * @author Rick Mercer and Tila Madisen
  */
 public class RecursionFun {
 
   // Complete recursive method combinations that returns from n choose k.
   // This method is described in 17_SimpleRecursion.pptx.
   public int combinations(int n, int k) {
-    return Integer.MIN_VALUE;
+	  if (k == 1) {
+		  return n;
+	  }
+	  if (n == k) {
+		  return 1;
+	  }
+	  
+	  return combinations(n-1, k-1) + combinations(n-1, k);
   }
 
  

@@ -20,6 +20,9 @@ public class RecursionFunTest {
   @Test
   public void testCombinations1() {
     // some simple ones
+	assertEquals(1, rf.combinations(1, 1));
+	assertEquals(5, rf.combinations(5, 1));
+	assertEquals(1, rf.combinations(899, 899));
     assertEquals(4, rf.combinations(4, 3));
     assertEquals(3, rf.combinations(3, 2));
     assertEquals(6, rf.combinations(4, 2));
