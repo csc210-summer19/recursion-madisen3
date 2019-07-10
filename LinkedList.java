@@ -150,8 +150,7 @@ public class LinkedList<E extends Comparable<E>> {
 		}
 		if (ref == first && elem.equals(ref.data)) {
 			first = first.next;
-		} 
-		else {
+		} else {
 			if (elem.equals(ref.next.data)) {
 				ref.next = ref.next.next;
 			}
@@ -170,8 +169,7 @@ public class LinkedList<E extends Comparable<E>> {
 		// if LL is empty return nothing
 		if (ref == null) {
 			return;
-		} 
-		else if (ref.data.equals(elem)) {
+		} else if (ref.data.equals(elem)) {
 			ref.next = new Node(elem, ref.next);
 			ref = ref.next;
 		}
