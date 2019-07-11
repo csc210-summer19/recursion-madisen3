@@ -29,18 +29,28 @@ public class RecursionFun {
 	}
 
 	// Complete recursive method intWithCommas that returns the argument as a
-	// String
-	// with commas in the correct places.
+	// String with commas in the correct places.
 	//
 	// intWithCommas(999) returns "999"
 	// intWithCommas(1234) returns "1,234"
 	// intWithCommas(1007) returns "1,007"
 	// intWithCommas(1023004567) returns "1,023,004,567"
 	//
+	//String result = ""; 
+	//int temp = n / 1000; 
+	//if (temp > 0) 
+	//{ 
+	//return result + intWithCommas(temp) + "," + (n % 1000); 
+	//} 
+	//return result + n; 
 	// Precondition: n >= 0
 	public String intWithCommas(int n) {
-		// TODO: Implement this method using recursion. Do not use a loop
-		return "Under construction";
+		String intStr = "";
+		if (n < 1000) {
+			intStr = Integer.toString(n) + intStr;
+		}
+		
+		return intStr + intWithCommas(n) + "," + (n%1000);
 	}
 
 	// Write recursive method reverseArray that reverses the array elements in a

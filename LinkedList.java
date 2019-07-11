@@ -145,16 +145,19 @@ public class LinkedList<E extends Comparable<E>> {
 	}
 
 	private void removeAllHelper(E elem, Node ref) {
-		if (ref == null || ref.next == null) {
-			return;
-		}
-		if (ref == first && elem.equals(ref.data)) {
+		if (ref == first && elem.equals(first.data)) {
 			first = first.next;
+			n--;
+		}
+		// LL is empty 
+		if (ref == null || ref.next != null) { 
+			return;
 		} else {
-			if (elem.equals(ref.next.data)) {
-				ref.next = ref.next.next;
+			Node temp = ref.next;
+			if (elem.equals(temp.data)) {
+				temp = temp.next;
 			}
-			removeAllHelper(elem, ref.next);
+			removeAllHelper(elem, temp);
 		}
 	}
 
